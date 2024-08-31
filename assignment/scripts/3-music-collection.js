@@ -44,6 +44,47 @@ function findByArtist(collection, artist){
 
 console.log(findByArtist(myCollection, '100 gecs'));
 
+
+function search(collection, searchCriteria){
+  let result = [];
+
+  if(arguments.length < 2){
+    return collection;
+  }
+
+  if(!('artist' in searchCriteria) || !('yearPublished' in searchCriteria)){
+    return collection;
+  }
+
+  if(searchCriteria.artist === '' || searchCriteria.yearPublished === ''){
+    return collection;
+  }
+
+  for(album of collection){
+    if(album.artist === searchCriteria.artist && album.yearPublished === searchCriteria.yearPublished){
+      result.push(album);
+    } 
+  }
+
+  return result;
+
+}
+
+console.log('case: no searchCritera');
+console.log(search(myCollection));
+console.log('case: empty search criteria');
+console.log(search(myCollection, {}));
+console.log('case: empty artist');
+console.log(search(myCollection, {artist: '', yearPublished: 2022}));
+console.log('case: unfound search critera');
+console.log(search(myCollection, {artist: 'laura les', yearPublished: 2022}));
+console.log('case: found search criteria');
+console.log(search(myCollection, {artist: 'charli xcx', yearPublished: 2024}));
+
+
+
+
+
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
 // as a lil' chunk of friendly code that you don't need to understand right now.
 // (It's used for automated testing.)

@@ -34,6 +34,14 @@ function showCollection(collection){
 showCollection(myCollection);
 
 
+function findByArtist(collection, artist){
+  let result = [];
+  for(let album in collection){
+    if(album.artist === artist) result.push(album);
+  }
+  return result;
+}
+
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
 // as a lil' chunk of friendly code that you don't need to understand right now.
 // (It's used for automated testing.)

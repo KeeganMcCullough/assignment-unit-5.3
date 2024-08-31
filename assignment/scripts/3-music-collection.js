@@ -4,14 +4,25 @@ console.log('***** Music Collection *****')
 
 let myCollection = [];
 
+function addToCollection(collection, title, artist, yearPublished){
+  const album = {
+    title:title,
+    artist:artist,
+    yearPublished:yearPublished
+  }
+  console.log('created new album: ' + album.title);
+  collection.push(album);
+  return album;
+}
 
 
-
-
-
-
-
-
+console.log(addToCollection(myCollection, '1000 gecs', '100 gecs', 2019));
+console.log(addToCollection(myCollection, 'brat', 'charli xcx', 2024));
+console.log(addToCollection(myCollection, 'CHASER', 'femtanyl', 2023));
+console.log(addToCollection(myCollection, 'Wallsocket', 'Underscores', 2023));
+console.log(addToCollection(myCollection, `OIL OF EVERY PEARL'S UN-INSIDES`, 'SOPHIE', 2018));
+console.log(addToCollection(myCollection, '1000 gecs and the Tree of Clues', '100 gecs', 2020));
+console.log(myCollection);
 
 
 

@@ -25,7 +25,13 @@ console.log(addToCollection(myCollection, '1000 gecs and the Tree of Clues', '10
 console.log(myCollection);
 
 
+function showCollection(collection){
+  for(let x=0; x < collection.length; x++){
+    console.log(collection[x].title + ' by ' + collection[x].artist + ', published in ' + collection[x].yearPublished);
+  }
+}
 
+showCollection(myCollection);
 
 
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
